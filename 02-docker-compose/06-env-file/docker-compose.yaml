@@ -1,0 +1,5 @@
+services:
+  sel-app:
+    image: vinsdocker/sel-app:${VERSION:-v1}
+    ports:
+      - 8060:80
