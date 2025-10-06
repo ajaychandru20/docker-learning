@@ -1,4 +1,4 @@
-package com.ajayc20.pages.flight.registerpage;
+package com.ajayc20.pages.flightreservation;
 
 import com.ajayc20.pages.AbstractPage;
 import org.openqa.selenium.By;

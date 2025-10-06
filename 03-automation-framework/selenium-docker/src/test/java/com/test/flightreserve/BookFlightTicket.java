@@ -1,10 +1,12 @@
 package com.test.flightreserve;
 
-import com.ajayc20.pages.flight.registerpage.*;
+import com.ajayc20.pages.flightreservation.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class BookFlightTicket {
@@ -42,10 +44,11 @@ public class BookFlightTicket {
     }
 
     @Test(dependsOnMethods = "registrationPageConformation")
-    public void flightSearch() {
+    @Parameters({"numberOfPassengers"})
+    public void flightSearch(String numberOfPassengers) {
         FlightSearchPage flightSearchPage = new FlightSearchPage(driver);
         Assert.assertTrue(flightSearchPage.isDataVisible());
-        flightSearchPage.selectDropDownPassanger("1");
+        flightSearchPage.selectDropDownPassanger(numberOfPassengers);
         flightSearchPage.selectRouteAndDepaturs();
         flightSearchPage.selectServiceClass();
         flightSearchPage.clickSelectFlightButton();
@@ -60,11 +63,16 @@ public class BookFlightTicket {
     }
 
     @Test(dependsOnMethods = "flightSelect")
-    public void flightConformation() {
+    @Parameters({"totalAmount"})
+    public void flightConformation(String totalAmount) {
         FlightBookedConformationPage conformationPage = new FlightBookedConformationPage(driver);
         conformationPage.isDataVisible();
         conformationPage.conformationNumber();
-        Assert.assertEquals(conformationPage.conformationAmount(), "$584 USD");
+        Assert.assertEquals(conformationPage.conformationAmount(),  totalAmount); // 1 - "$584 USD"
 
+    }
+    @AfterTest
+    public void closeBrowser(){
+        driver.quit();
     }
 }
