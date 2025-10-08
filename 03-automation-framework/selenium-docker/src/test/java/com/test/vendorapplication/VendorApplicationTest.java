@@ -1,9 +1,6 @@
 package com.test.vendorapplication;
 
-import com.ajayc20.pages.vendorapplication.DashboardTablePage;
-import com.ajayc20.pages.vendorapplication.DashboardWidgetsPage;
-import com.ajayc20.pages.vendorapplication.LoginPage;
-import com.ajayc20.pages.vendorapplication.LogoutSessionPage;
+import com.ajayc20.pages.vendorapplication.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -49,6 +46,7 @@ public class VendorApplicationTest {
     @Test(dependsOnMethods = "checkDashboardTable")
     public void logOutSession() {
         LogoutSessionPage logoutSessionPage = new LogoutSessionPage(driver);
+        HandelPassConformWindowsAlert.handelPasswordWindowAlert(driver);
         Assert.assertTrue(logoutSessionPage.isDataVisible());
         logoutSessionPage.logoutSession();
 

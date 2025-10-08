@@ -13,7 +13,7 @@ public class LogoutSessionPage extends AbstractPage {
     @FindBy(linkText = "Logout")
     private WebElement logOutButton;
 
-    @FindBy(id = "logoutModal")
+    @FindBy(css = "#logoutModal a")
     private WebElement logOutBox;
 
     @FindBy(xpath = "//*[button]/a")
@@ -38,7 +38,9 @@ public class LogoutSessionPage extends AbstractPage {
         this.wait.until(ExpectedConditions.elementToBeClickable(logOutButton));
         logOutButton.click();
 
-
+        this.wait.until(ExpectedConditions.visibilityOf(logOutBox));
+        this.wait.until(ExpectedConditions.elementToBeClickable(logOutBox));
+        logOutBox.click();
 
     }
 }
