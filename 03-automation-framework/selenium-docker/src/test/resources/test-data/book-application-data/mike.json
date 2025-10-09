@@ -1,0 +1,12 @@
+{
+  "username": "mike",
+  "lastname": "k",
+  "email": "mike@test.com",
+  "password": "admin123",
+  "streetname": "No 01 Chennai",
+  "cityname": "Avadi",
+  "pincode": "700000",
+  "state": "Indiana",
+  "noOfPassanger": "2",
+  "totalamount": "$1169 USD"
+}

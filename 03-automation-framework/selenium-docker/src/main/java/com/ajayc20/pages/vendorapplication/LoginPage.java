@@ -17,12 +17,16 @@ public class LoginPage extends AbstractPage {
     @FindBy(id = "login")
     private WebElement loginButton;
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         super(driver);
     }
 
 
-    public void loginIntoPage(String userName, String passWord){
+    public void visitApplication(String url) {
+        this.driver.get(url);
+    }
+
+    public void loginIntoPage(String userName, String passWord) {
         userNameField.sendKeys(userName);
         passwordField.sendKeys(passWord);
         loginButton.click();

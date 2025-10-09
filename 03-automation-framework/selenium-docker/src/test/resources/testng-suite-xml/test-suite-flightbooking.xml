@@ -1,29 +1,19 @@
 <suite name="flight-booking-suite">
     <test name="flight-booking-test-1 passanger">
         <classes name="flight-booking-class-1 passanger">
-            <parameter name="numberOfPassengers" value="1"></parameter>
-            <parameter name="totalAmount" value="$584 USD"></parameter>
+            <parameter name="testDataPath" value="test-data/book-application-data/john.json"></parameter>
             <class name="com.test.flightreserve.BookFlightTicket"></class>
         </classes>
     </test>
     <test name="flight-booking-test-2 passanger">
         <classes name="flight-booking-class-2 passanger">
-            <parameter name="numberOfPassengers" value="2"></parameter>
-            <parameter name="totalAmount" value="$1169 USD"></parameter>
+            <parameter name="testDataPath" value="test-data/book-application-data/mike.json"></parameter>
             <class name="com.test.flightreserve.BookFlightTicket"></class>
         </classes>
     </test>
     <test name="flight-booking-test-3 passanger">
         <classes name="flight-booking-class-3 passanger">
-            <parameter name="numberOfPassengers" value="3"></parameter>
-            <parameter name="totalAmount" value="$1753 USD"></parameter>
-            <class name="com.test.flightreserve.BookFlightTicket"></class>
-        </classes>
-    </test>
-    <test name="flight-booking-test-4 passanger">
-        <classes name="flight-booking-class-4 passanger">
-            <parameter name="numberOfPassengers" value="4"></parameter>
-            <parameter name="totalAmount" value="$2338 USD"></parameter>
+            <parameter name="testDataPath" value="test-data/book-application-data/sam.json"></parameter>
             <class name="com.test.flightreserve.BookFlightTicket"></class>
         </classes>
     </test>

@@ -1,52 +1,65 @@
 package com.test.vendorapplication;
 
-import com.ajayc20.pages.vendorapplication.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.ajayc20.pages.vendorapplication.LoginPage;
+import com.ajayc20.pages.vendorapplication.DashboardWidgetsPage;
+import com.ajayc20.pages.vendorapplication.DashboardTablePage;
+import com.ajayc20.pages.vendorapplication.LogoutSessionPage;
+
+import static com.ajayc20.pages.vendorapplication.HandelPassConformWindowsAlert.*;
+
+import com.test.AbstractTest;
+import com.test.vendorapplication.resourceloader.VendorTestDataParameters;
+import com.utils.JsonLoader;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class VendorApplicationTest {
 
-    WebDriver driver;
+public class VendorApplicationTest extends AbstractTest {
 
-    @BeforeTest
-    public void initWebDriver() {
-        this.driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    private LoginPage loginPage;
+    private DashboardWidgetsPage dashboardWidgetsPage;
+    private DashboardTablePage dashboardTablePage;
+    private LogoutSessionPage logoutSessionPage;
+    private VendorTestDataParameters testData;
+
+    @BeforeClass
+    @Parameters("testDataPath")
+    public void initWebDriverOnPages(String testDataPath) {
+        this.testData = JsonLoader.getTestData(testDataPath, VendorTestDataParameters.class);
+        this.loginPage = new LoginPage(this.driver);
+        this.dashboardWidgetsPage = new DashboardWidgetsPage(this.driver);
+        this.dashboardTablePage = new DashboardTablePage(this.driver);
+        this.logoutSessionPage = new LogoutSessionPage(this.driver);
     }
 
     @Test
     public void loginPage() {
-        driver.get("https://d1uh9e7cu07ukd.cloudfront.net/selenium-docker/vendor-app/index.html");
-        LoginPage loginPage = new LoginPage(driver);
+        loginPage.visitApplication("https://d1uh9e7cu07ukd.cloudfront.net/selenium-docker/vendor-app/index.html");
         Assert.assertTrue(loginPage.isDataVisible());
-        loginPage.loginIntoPage("mike", "mike");
+        loginPage.loginIntoPage(testData.username(), testData.password());
     }
 
     @Test(dependsOnMethods = "loginPage")
     public void checkDashboardWidgets() {
-        DashboardWidgetsPage widgetsPage = new DashboardWidgetsPage(driver);
-        Assert.assertTrue(widgetsPage.isDataVisible());
-        widgetsPage.validateMonthlyEarningCard("$55,000");
-        widgetsPage.validateAnnualEarningCard("$563,300");
-        widgetsPage.validateProfitMargin("80%");
-        widgetsPage.validateAvailableInventory("45");
+        Assert.assertTrue(dashboardWidgetsPage.isDataVisible());
+        dashboardWidgetsPage.validateMonthlyEarningCard(testData.monthlyEarning());
+        dashboardWidgetsPage.validateAnnualEarningCard(testData.annualEarning());
+        dashboardWidgetsPage.validateProfitMargin(testData.profitMargin());
+        dashboardWidgetsPage.validateAvailableInventory(testData.availableInventory());
     }
 
     @Test(dependsOnMethods = "checkDashboardWidgets")
     public void checkDashboardTable() {
-        DashboardTablePage tablePage = new DashboardTablePage(driver);
-        Assert.assertTrue(tablePage.isDataVisible());
-        tablePage.validateSearchBox("miami");
-        tablePage.validateFinalCount(10);
+        Assert.assertTrue(dashboardTablePage.isDataVisible());
+        dashboardTablePage.validateSearchBox(testData.searchKeyword());
+        dashboardTablePage.validateFinalCount(testData.searchResultsCount());
     }
 
     @Test(dependsOnMethods = "checkDashboardTable")
     public void logOutSession() {
-        LogoutSessionPage logoutSessionPage = new LogoutSessionPage(driver);
-        HandelPassConformWindowsAlert.handelPasswordWindowAlert(driver);
+        handelPasswordWindowAlert(this.driver);
         Assert.assertTrue(logoutSessionPage.isDataVisible());
         logoutSessionPage.logoutSession();
 

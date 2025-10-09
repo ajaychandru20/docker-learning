@@ -1,42 +1,52 @@
 package com.test.flightreserve;
 
 import com.ajayc20.pages.flightreservation.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.test.AbstractTest;
+import com.test.flightreserve.resourceloader.BookFlightTestDataParameters;
+import com.utils.JsonLoader;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class BookFlightTicket {
+public class BookFlightTicket extends AbstractTest {
 
-    WebDriver driver;
+    private RegisterPage registerPage;
+    private RegisterConformationPage registerConformationPage;
+    private FlightSearchPage flightSearchPage;
+    private FlightSelectPage flightSelectPage;
+    private FlightBookedConformationPage flightBookedConformationPage;
+    private BookFlightTestDataParameters bookFlightTestDataParameters;
 
-    @BeforeTest
-    public void setDriver() {
-        this.driver = new ChromeDriver();
-        driver.manage().window().maximize();
 
+    @BeforeClass
+    @Parameters("testDataPath")
+    private void initPagesDriver(String testDataPath) {
+        this.bookFlightTestDataParameters = JsonLoader.getTestData(testDataPath, BookFlightTestDataParameters.class);
+        this.registerPage = new RegisterPage(this.driver);
+        this.registerConformationPage = new RegisterConformationPage(this.driver);
+        this.flightSearchPage = new FlightSearchPage(this.driver);
+        this.flightSelectPage = new FlightSelectPage(this.driver);
+        this.flightBookedConformationPage = new FlightBookedConformationPage(this.driver);
     }
 
     @Test
     public void registrationPage() {
 
-        RegisterPage registerPage = new RegisterPage(driver);
+//        RegisterPage registerPage = new RegisterPage(driver);
         registerPage.getURL("https://d1uh9e7cu07ukd.cloudfront.net/selenium-docker/reservation-app/index.html#");
         Assert.assertTrue(registerPage.isDataVisible());
-        registerPage.enterUsername("Ajay", "C");
-        registerPage.enterUserEmailPassword("selenium@docker.com", "Platform.1");
-        registerPage.enterAddressDetails("No 01 Chennai", "Pattabiram", "600000");
-        registerPage.selectState("Indiana");
+        registerPage.enterUsername(bookFlightTestDataParameters.username(), bookFlightTestDataParameters.lastname());
+        registerPage.enterUserEmailPassword(bookFlightTestDataParameters.email(), bookFlightTestDataParameters.password());
+        registerPage.enterAddressDetails(bookFlightTestDataParameters.streetname(), bookFlightTestDataParameters.cityname(), bookFlightTestDataParameters.pincode());
+        registerPage.selectState(bookFlightTestDataParameters.state());
         registerPage.clickRegButton();
 
     }
 
     @Test(dependsOnMethods = "registrationPage")
     public void registrationPageConformation() {
-        RegisterConformationPage registerConformationPage = new RegisterConformationPage(driver);
+//        RegisterConformationPage registerConformationPage = new RegisterConformationPage(driver);
         Assert.assertTrue(registerConformationPage.isDataVisible());
         registerConformationPage.clickGoToButton();
 
@@ -44,11 +54,10 @@ public class BookFlightTicket {
     }
 
     @Test(dependsOnMethods = "registrationPageConformation")
-    @Parameters({"numberOfPassengers"})
-    public void flightSearch(String numberOfPassengers) {
-        FlightSearchPage flightSearchPage = new FlightSearchPage(driver);
+    public void flightSearch() {
+//        FlightSearchPage flightSearchPage = new FlightSearchPage(driver);
         Assert.assertTrue(flightSearchPage.isDataVisible());
-        flightSearchPage.selectDropDownPassanger(numberOfPassengers);
+        flightSearchPage.selectDropDownPassanger(bookFlightTestDataParameters.noOfPassanger());
         flightSearchPage.selectRouteAndDepaturs();
         flightSearchPage.selectServiceClass();
         flightSearchPage.clickSelectFlightButton();
@@ -56,23 +65,18 @@ public class BookFlightTicket {
 
     @Test(dependsOnMethods = "flightSearch")
     public void flightSelect() {
-        FlightSelectPage flightSelectPage = new FlightSelectPage(driver);
+//        FlightSelectPage flightSelectPage = new FlightSelectPage(driver);
         Assert.assertTrue(flightSelectPage.isDataVisible());
         flightSelectPage.selectEmiratesEconomy();
         flightSelectPage.clickConformButton();
     }
 
     @Test(dependsOnMethods = "flightSelect")
-    @Parameters({"totalAmount"})
-    public void flightConformation(String totalAmount) {
-        FlightBookedConformationPage conformationPage = new FlightBookedConformationPage(driver);
-        conformationPage.isDataVisible();
-        conformationPage.conformationNumber();
-        Assert.assertEquals(conformationPage.conformationAmount(),  totalAmount); // 1 - "$584 USD"
+    public void flightConformation() {
+//        FlightBookedConformationPage conformationPage = new FlightBookedConformationPage(driver);
+        flightBookedConformationPage.isDataVisible();
+        flightBookedConformationPage.conformationNumber();
+        Assert.assertEquals(flightBookedConformationPage.conformationAmount(), bookFlightTestDataParameters.totalamount()); // 1 - "$584 USD"
 
-    }
-    @AfterTest
-    public void closeBrowser(){
-        driver.quit();
     }
 }
