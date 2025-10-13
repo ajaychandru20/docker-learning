@@ -1,5 +1,6 @@
 package com.test;
 
+import com.google.common.util.concurrent.Uninterruptibles;
 import com.utils.Config;
 import com.utils.Constant;
 import org.openqa.selenium.Capabilities;
@@ -10,12 +11,14 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 public class AbstractTest {
     protected WebDriver driver;
@@ -49,14 +52,16 @@ public class AbstractTest {
         return new RemoteWebDriver(new URL(completeURL), capabilities);
     }
     private WebDriver launchLocalBrowser() {
-
         return this.driver = new ChromeDriver();
-
     }
 
     @AfterTest
     public void quitBrowsers() {
         this.driver.quit();
+    }
+    @AfterMethod
+    public void waitForTestMethods(){
+        Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(2));
     }
 
 }

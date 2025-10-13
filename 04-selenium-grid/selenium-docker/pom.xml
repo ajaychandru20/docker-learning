@@ -83,7 +83,8 @@
                 <configuration>
                     <systemPropertyVariables>
 <!--                        <browser>firefox</browser>-->
-                        <selenium.grid.enable>true</selenium.grid.enable>
+                        <selenium.grid.enable>true
+                        </selenium.grid.enable>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>test-suite.xml</suiteXmlFile>

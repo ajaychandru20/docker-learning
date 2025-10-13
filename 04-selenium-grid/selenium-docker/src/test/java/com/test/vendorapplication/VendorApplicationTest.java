@@ -54,6 +54,7 @@ public class VendorApplicationTest extends AbstractTest {
 
     @Test(dependsOnMethods = "checkDashboardWidgets")
     public void checkDashboardTable() {
+        handelPasswordWindowAlert(this.driver);
         Assert.assertTrue(dashboardTablePage.isDataVisible());
         dashboardTablePage.validateSearchBox(testData.searchKeyword());
         dashboardTablePage.validateFinalCount(testData.searchResultsCount());
