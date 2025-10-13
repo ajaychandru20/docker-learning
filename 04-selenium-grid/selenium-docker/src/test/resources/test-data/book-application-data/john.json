@@ -1,0 +1,12 @@
+{
+  "username": "john",
+  "lastname": "f",
+  "email": "john@test.com",
+  "password": "admin123",
+  "streetname": "No 01 Chennai",
+  "cityname": "Taramani",
+  "pincode": "800000",
+  "state": "Indiana",
+  "noOfPassanger": "3",
+  "totalamount": "$1753 USD"
+}

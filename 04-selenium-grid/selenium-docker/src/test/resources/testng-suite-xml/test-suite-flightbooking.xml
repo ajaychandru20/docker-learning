@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="flight-booking-suite" parallel="tests" thread-count="3">
+    <test name="flight-booking-test-1 passanger">
+        <parameter name="testDataPath" value="test-data/book-application-data/john.json"></parameter>
+        <classes>
+            <class name="com.test.flightreserve.BookFlightTicket"></class>
+        </classes>
+    </test>
+    <test name="flight-booking-test-2 passanger">
+        <parameter name="testDataPath" value="test-data/book-application-data/mike.json"></parameter>
+        <classes>
+            <class name="com.test.flightreserve.BookFlightTicket"></class>
+        </classes>
+    </test>
+    <test name="flight-booking-test-3 passanger">
+        <parameter name="testDataPath" value="test-data/book-application-data/sam.json"></parameter>
+        <classes>
+            <class name="com.test.flightreserve.BookFlightTicket"></class>
+        </classes>
+    </test>
+</suite>
