@@ -82,14 +82,15 @@
                 <version>${maven.surefire.version}</version>
                 <configuration>
                     <systemPropertyVariables>
-<!--                        <browser>firefox</browser>-->
+                        <!--                        <browser>firefox</browser>-->
                         <selenium.grid.enable>true
                         </selenium.grid.enable>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>test-suite.xml</suiteXmlFile>
+                            <file>src/test/resources/testng-suite-xml/test-suite-vendorapplication.xml</file>
+                            <file>src/test/resources/testng-suite-xml/test-suite-flightbooking.xml</file>
                     </suiteXmlFiles>
-                    <threadCount>1</threadCount>
+                    <threadCount>2</threadCount>
                     <reportsDirectory>target/test-output</reportsDirectory>
                 </configuration>
             </plugin>
