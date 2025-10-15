@@ -1,0 +1,8 @@
+services:
+  square:
+    image: ajayc20/square-number-with-env-var
+    environment:
+      # - NUMBER=${NUM}
+      # - NUMBER=5
+      # - NUMBER: ${NUMBER}
+      - NUMBER=${NUMBER:-5}  # Default value if env var not set

@@ -1,0 +1,7 @@
+#docker compose --env-file dev.env up
+
+services:
+  sel-app:
+    image: vinsdocker/sel-app:${VERSION:-v1}
+    ports:
+      - ${PORT}:80

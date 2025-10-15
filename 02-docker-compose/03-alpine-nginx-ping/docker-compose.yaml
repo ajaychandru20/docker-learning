@@ -1,0 +1,10 @@
+services:
+  nginx:
+    image: nginx
+    container_name: con-nginx
+  alpine:
+    image: alpine
+    container_name: con-alpine
+    entrypoint: ["ping", "nginx"]
+    depends_on:
+      - nginx

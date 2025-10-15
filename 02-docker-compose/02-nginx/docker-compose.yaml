@@ -1,0 +1,7 @@
+services:
+  nginx:
+    image: nginx
+    container_name: con-nginx
+    # entrypoint: 
+    ports:
+      - 8080:80

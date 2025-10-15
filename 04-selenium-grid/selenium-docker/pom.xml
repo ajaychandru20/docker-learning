@@ -90,7 +90,7 @@
                             <file>src/test/resources/testng-suite-xml/test-suite-vendorapplication.xml</file>
                             <file>src/test/resources/testng-suite-xml/test-suite-flightbooking.xml</file>
                     </suiteXmlFiles>
-                    <threadCount>2</threadCount>
+                    <threadCount>3</threadCount>
                     <reportsDirectory>target/test-output</reportsDirectory>
                 </configuration>
             </plugin>

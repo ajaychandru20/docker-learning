@@ -1,0 +1,11 @@
+services:
+  nginx:
+    image: nginx
+  alpine:
+    image: alpine
+    working_dir: /workspace/compose/volume-mapping
+    volumes:
+      - /home/ajaychandru20/Desktop/Github/docker-learning/02-docker-compose/04-volume-mapping:/workspace/compose/volume-mapping
+    entrypoint: ["wget","http://nginx"]
+    depends_on:
+      - nginx

@@ -1,0 +1,5 @@
+services:
+  alpine:
+    image: alpine
+    # command: ["sh", "-c", "echo Hello from Alpine"]
+    entrypoint: ["ping", "nginx"]
