@@ -4,6 +4,7 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import com.utils.Config;
 import com.utils.Constant;
 import com.utils.listener.ListenerTestNG;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,11 +49,12 @@ public class AbstractTest {
         String urlFormat = Config.get(Constant.SELENIUM_GRID_URL_FORMAT);
         String urlHub = Config.get(Constant.SELENIUM_HUB_FORMAT);
         String completeURL = String.format(urlFormat, urlHub);
-        logger.info(completeURL);
+        logger.info("grid url: {}",completeURL);
         return new RemoteWebDriver(new URL(completeURL), capabilities);
     }
     private WebDriver launchLocalBrowser() {
-        return this.driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+        return new ChromeDriver();
     }
 
     @AfterTest

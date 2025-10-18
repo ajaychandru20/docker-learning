@@ -9,7 +9,7 @@ import java.util.Properties;
 public class Config {
 
     private static final Logger logger = LoggerFactory.getLogger(Config.class);
-    private static final String DEFAULT_PROPERTIES = "test-data/config/default.properties";
+    private static final String DEFAULT_PROPERTIES = "config/default.properties";
     private static Properties properties;
 
     public static void initConfigProperties() {
@@ -18,7 +18,7 @@ public class Config {
 
         // overwrite the key value if we pass any properties in mvn test
         for (String key : properties.stringPropertyNames()) {
-            if (System.getProperties().contains(key)) {
+            if (System.getProperties().containsKey(key)) {
                 properties.setProperty(key, System.getProperty(key));
             }
         }
