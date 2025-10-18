@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-10-18T15:53:20 GMT" name="flight-booking-suite" finished-at="2025-10-18T15:53:56 GMT" duration-ms="36067">
+    <groups>
+    </groups>
+    <test started-at="2025-10-18T15:53:20 GMT" name="flight-booking-test-1 passanger" finished-at="2025-10-18T15:53:40 GMT" duration-ms="19868">
+      <class name="com.test.flightreserve.BookFlightTicket">
+        <test-method is-config="true" signature="setDriver(org.testng.ITestContext)[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:20 GMT" name="setDriver" finished-at="2025-10-18T15:53:24 GMT" duration-ms="3697" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@27d4a09]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method is-config="true" signature="initPagesDriver(java.lang.String)[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:24 GMT" name="initPagesDriver" finished-at="2025-10-18T15:53:24 GMT" duration-ms="272" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test-data/book-application-data/john.json]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPagesDriver -->
+        <test-method signature="registrationPage()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:24 GMT" name="registrationPage" finished-at="2025-10-18T15:53:27 GMT" duration-ms="2898" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationPage -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:27 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:29 GMT" duration-ms="2000" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="registrationPageConformation()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:29 GMT" name="registrationPageConformation" finished-at="2025-10-18T15:53:30 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.registrationPage" duration-ms="467" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationPageConformation -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:30 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:32 GMT" duration-ms="2002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="flightSearch()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:32 GMT" name="flightSearch" finished-at="2025-10-18T15:53:33 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.registrationPageConformation" duration-ms="1679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightSearch -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:33 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:35 GMT" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="flightSelect()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:35 GMT" name="flightSelect" finished-at="2025-10-18T15:53:36 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.flightSearch" duration-ms="479" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightSelect -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:36 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:38 GMT" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="flightConformation()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:38 GMT" name="flightConformation" finished-at="2025-10-18T15:53:38 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.flightSelect" duration-ms="243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightConformation -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:38 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:40 GMT" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method is-config="true" signature="quitBrowsers()[pri:0, instance:com.test.flightreserve.BookFlightTicket@727eb8cb]" started-at="2025-10-18T15:53:40 GMT" name="quitBrowsers" finished-at="2025-10-18T15:53:40 GMT" duration-ms="86" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowsers -->
+      </class> <!-- com.test.flightreserve.BookFlightTicket -->
+    </test> <!-- flight-booking-test-1 passanger -->
+    <test started-at="2025-10-18T15:53:20 GMT" name="flight-booking-test-2 passanger" finished-at="2025-10-18T15:53:41 GMT" duration-ms="20492">
+      <class name="com.test.flightreserve.BookFlightTicket">
+        <test-method is-config="true" signature="setDriver(org.testng.ITestContext)[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:20 GMT" name="setDriver" finished-at="2025-10-18T15:53:24 GMT" duration-ms="3688" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7e4204e2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method is-config="true" signature="initPagesDriver(java.lang.String)[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:24 GMT" name="initPagesDriver" finished-at="2025-10-18T15:53:24 GMT" duration-ms="272" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test-data/book-application-data/mike.json]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPagesDriver -->
+        <test-method signature="registrationPage()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:24 GMT" name="registrationPage" finished-at="2025-10-18T15:53:27 GMT" duration-ms="2878" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationPage -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:27 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:29 GMT" duration-ms="2011" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="registrationPageConformation()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:29 GMT" name="registrationPageConformation" finished-at="2025-10-18T15:53:30 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.registrationPage" duration-ms="431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationPageConformation -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:30 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:32 GMT" duration-ms="2002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="flightSearch()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:32 GMT" name="flightSearch" finished-at="2025-10-18T15:53:33 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.registrationPageConformation" duration-ms="1740" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightSearch -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:33 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:35 GMT" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="flightSelect()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:35 GMT" name="flightSelect" finished-at="2025-10-18T15:53:36 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.flightSearch" duration-ms="494" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightSelect -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:36 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:38 GMT" duration-ms="2002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="flightConformation()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:38 GMT" name="flightConformation" finished-at="2025-10-18T15:53:39 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.flightSelect" duration-ms="812" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightConformation -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:39 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:41 GMT" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method is-config="true" signature="quitBrowsers()[pri:0, instance:com.test.flightreserve.BookFlightTicket@79dc5318]" started-at="2025-10-18T15:53:41 GMT" name="quitBrowsers" finished-at="2025-10-18T15:53:41 GMT" duration-ms="100" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowsers -->
+      </class> <!-- com.test.flightreserve.BookFlightTicket -->
+    </test> <!-- flight-booking-test-2 passanger -->
+    <test started-at="2025-10-18T15:53:40 GMT" name="flight-booking-test-3 passanger" finished-at="2025-10-18T15:53:56 GMT" duration-ms="16154">
+      <class name="com.test.flightreserve.BookFlightTicket">
+        <test-method is-config="true" signature="configInit()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:20 GMT" name="configInit" finished-at="2025-10-18T15:53:20 GMT" duration-ms="29" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configInit -->
+        <test-method is-config="true" signature="setDriver(org.testng.ITestContext)[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:40 GMT" name="setDriver" finished-at="2025-10-18T15:53:41 GMT" duration-ms="829" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@b7c4869]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method is-config="true" signature="initPagesDriver(java.lang.String)[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:41 GMT" name="initPagesDriver" finished-at="2025-10-18T15:53:41 GMT" duration-ms="5" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test-data/book-application-data/sam.json]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPagesDriver -->
+        <test-method signature="registrationPage()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:41 GMT" name="registrationPage" finished-at="2025-10-18T15:53:44 GMT" duration-ms="3295" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationPage -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:44 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:46 GMT" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="registrationPageConformation()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:46 GMT" name="registrationPageConformation" finished-at="2025-10-18T15:53:47 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.registrationPage" duration-ms="158" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationPageConformation -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:47 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:49 GMT" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="flightSearch()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:49 GMT" name="flightSearch" finished-at="2025-10-18T15:53:50 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.registrationPageConformation" duration-ms="1235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightSearch -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:50 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:52 GMT" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="flightSelect()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:52 GMT" name="flightSelect" finished-at="2025-10-18T15:53:52 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.flightSearch" duration-ms="319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightSelect -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:52 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:54 GMT" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method signature="flightConformation()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:54 GMT" name="flightConformation" finished-at="2025-10-18T15:53:54 GMT" depends-on-methods="com.test.flightreserve.BookFlightTicket.flightSelect" duration-ms="223" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightConformation -->
+        <test-method is-config="true" signature="waitForTestMethods()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:54 GMT" name="waitForTestMethods" finished-at="2025-10-18T15:53:56 GMT" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitForTestMethods -->
+        <test-method is-config="true" signature="quitBrowsers()[pri:0, instance:com.test.flightreserve.BookFlightTicket@37e4d7bb]" started-at="2025-10-18T15:53:56 GMT" name="quitBrowsers" finished-at="2025-10-18T15:53:56 GMT" duration-ms="78" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowsers -->
+      </class> <!-- com.test.flightreserve.BookFlightTicket -->
+    </test> <!-- flight-booking-test-3 passanger -->
+  </suite> <!-- flight-booking-suite -->
+</testng-results>

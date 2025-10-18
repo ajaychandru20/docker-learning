@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [flight-booking-suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="flight-booking-test-2 passanger(failed)">
+    <parameter name="testDataPath" value="test-data/book-application-data/mike.json"/>
+    <classes>
+      <class name="com.test.flightreserve.BookFlightTicket">
+        <methods>
+          <include name="registrationPageConformation"/>
+          <include name="waitForTestMethods"/>
+          <include name="configInit"/>
+          <include name="quitBrowsers"/>
+          <include name="flightSearch"/>
+          <include name="initPagesDriver"/>
+          <include name="registrationPage"/>
+          <include name="flightConformation"/>
+          <include name="setDriver"/>
+          <include name="flightSelect"/>
+        </methods>
+      </class> <!-- com.test.flightreserve.BookFlightTicket -->
+    </classes>
+  </test> <!-- flight-booking-test-2 passanger(failed) -->
+  <test thread-count="2" parallel="tests" name="flight-booking-test-1 passanger(failed)">
+    <parameter name="testDataPath" value="test-data/book-application-data/john.json"/>
+    <classes>
+      <class name="com.test.flightreserve.BookFlightTicket">
+        <methods>
+          <include name="waitForTestMethods"/>
+          <include name="registrationPageConformation"/>
+          <include name="configInit"/>
+          <include name="quitBrowsers"/>
+          <include name="flightSearch"/>
+          <include name="initPagesDriver"/>
+          <include name="registrationPage"/>
+          <include name="setDriver"/>
+          <include name="flightConformation"/>
+          <include name="flightSelect"/>
+        </methods>
+      </class> <!-- com.test.flightreserve.BookFlightTicket -->
+    </classes>
+  </test> <!-- flight-booking-test-1 passanger(failed) -->
+  <test thread-count="2" parallel="tests" name="flight-booking-test-3 passanger(failed)">
+    <parameter name="testDataPath" value="test-data/book-application-data/sam.json"/>
+    <classes>
+      <class name="com.test.flightreserve.BookFlightTicket">
+        <methods>
+          <include name="waitForTestMethods"/>
+          <include name="registrationPageConformation"/>
+          <include name="quitBrowsers"/>
+          <include name="configInit"/>
+          <include name="flightSearch"/>
+          <include name="initPagesDriver"/>
+          <include name="registrationPage"/>
+          <include name="setDriver"/>
+          <include name="flightConformation"/>
+          <include name="flightSelect"/>
+        </methods>
+      </class> <!-- com.test.flightreserve.BookFlightTicket -->
+    </classes>
+  </test> <!-- flight-booking-test-3 passanger(failed) -->
+</suite> <!-- Failed suite [flight-booking-suite] -->
