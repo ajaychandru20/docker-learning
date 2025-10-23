@@ -1,0 +1,21 @@
+services:
+  vendor-portal:
+    image: ajayc20/selenium-and-docker:1.0.0
+    environment:
+      - BROWSER=${BROWSER}
+      - SELENIUM_GRID_ENABLED=true
+      - SELENIUM_HUB_FORMAT=hub
+      - THREAD_COUNT=3
+      - TEST_XML_FILE=test-suite-vendorapplication.xml
+    volumes:
+      - ./test-output/vendor-portal:/home/selenium-docker/test-output
+  flight-booking:
+    image: ajayc20/selenium-and-docker:1.0.0
+    environment:
+      - BROWSER=${BROWSER}
+      - SELENIUM_GRID_ENABLED=true
+      - SELENIUM_HUB_FORMAT=hub
+      - THREAD_COUNT=4
+      - TEST_XML_FILE=test-suite-flightbooking.xml
+    volumes:
+      - ./test-output/flight-booking:/home/selenium-docker/test-output

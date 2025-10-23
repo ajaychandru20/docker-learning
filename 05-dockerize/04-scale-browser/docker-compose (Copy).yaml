@@ -1,0 +1,58 @@
+services:
+  hub:
+    image: selenium/hub:4.32
+    ports:
+      - "4444:4444"
+
+  chrome:
+    image: selenium/node-chromium:4.32
+    shm_size: "2g"
+    # deploy:
+    #   replicas: 4
+    depends_on:
+      - hub
+    environment:
+      - SE_EVENT_BUS_HOST=hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+
+  firefox:
+    image: selenium/node-firefox:4.32
+    shm_size: "2g"
+    # deploy:
+    #   replicas: 4
+    depends_on:
+      - hub
+    environment:
+      - SE_EVENT_BUS_HOST=hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+  vendor-portal:
+    image: ajayc20/selenium-and-docker:1.0.0
+    depends_on:
+      - chrome
+    environment:
+      - BROWSER=chrome
+      - SELENIUM_GRID_ENABLED=true
+      - SELENIUM_HUB_FORMAT=hub
+      - THREAD_COUNT=2
+      - TEST_XML_FILE=test-suite-vendorapplication.xml
+    volumes:
+      - ./test-output/vendor-portal:/home/selenium-docker/test-output
+      - ./test-data/mike.json:/home/selenium-docker/test-data/vendor-application-data/mike.json
+  flight-booking:
+    image: ajayc20/selenium-and-docker:1.0.0
+    depends_on:
+      - chrome
+    environment:
+      - BROWSER=chrome
+      - SELENIUM_GRID_ENABLED=true
+      - SELENIUM_HUB_FORMAT=hub
+      - THREAD_COUNT=2
+      - TEST_XML_FILE=test-suite-flightbooking.xml
+    volumes:
+      - ./test-output/flight-booking:/home/selenium-docker/test-output
